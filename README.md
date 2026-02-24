@@ -1,87 +1,450 @@
-# 🏛️ Koperasi Merah Putih
-
 <div align="center">
 
-![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Prisma](https://img.shields.io/badge/Prisma-6.4-2D3748?style=for-the-badge&logo=prisma)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
-![PWA](https://img.shields.io/badge/PWA-Ready-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+  <img src="public/brand-mark.svg" alt="KMP Logo" width="96" />
 
-**Sistem Koperasi Digital Enterprise-Grade — Full-Stack, Open Source, Siap Pakai**
+  # 🏛️ KOPERASI MERAH PUTIH
 
-*Simpanan · Pinjaman · E-Voting RAT · Laporan Keuangan · Audit Trail — Semua dalam satu platform.*
+  **Platform Operasional Koperasi Digital — Enterprise-Grade, Open Source**
 
----
+  *Simpanan · Pinjaman · E-Voting RAT · Laporan Keuangan · Audit Trail*
+
+  <br />
+
+  <p>
+    <img src="https://img.shields.io/badge/Next.js-16-000?style=for-the-badge&logo=next.js" />
+    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=fff" />
+    <img src="https://img.shields.io/badge/Prisma-6-2D3748?style=for-the-badge&logo=prisma" />
+    <img src="https://img.shields.io/badge/PostgreSQL-Supabase-4169E1?style=for-the-badge&logo=postgresql&logoColor=fff" />
+  </p>
+  <p>
+    <img src="https://img.shields.io/badge/NextAuth-Session-1F2937?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/SWR-Sync-0EA5E9?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-UI-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=fff" />
+    <img src="https://img.shields.io/badge/PWA-Ready-5A0FC8?style=for-the-badge&logo=pwa&logoColor=fff" />
+    <img src="https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge" />
+  </p>
+
+  <br />
+
+  > Dibangun untuk operasional koperasi riil: kontrol finansial ketat, alur persetujuan berlapis, audit lengkap, dan arsitektur siap produksi.
 
 </div>
 
-## ✨ Fitur Lengkap
-
-### 💰 Keuangan & Transaksi
-| Fitur | Deskripsi |
-|-------|-----------|
-| **Simpanan Pokok, Wajib & Sukarela** | Tiga jenis simpanan sesuai standar koperasi Indonesia |
-| **Setoran & Penarikan Dana** | Optimistic UI, offline-sync queue, auto-retry saat koneksi pulih |
-| **Pinjaman (Pembiayaan)** | Pengajuan pinjaman dengan kalkulasi bunga flat/efektif, amortisasi, dan penalti keterlambatan |
-| **Maker-Checker Approval** | Dual-approval workflow untuk pinjaman: Maker verifikasi → Checker approve |
-| **Double-Entry Ledger** | Pembukuan debit/kredit otomatis per transaksi (akuntansi akurat) |
-| **Denda Keterlambatan Otomatis** | Cron job untuk menerapkan late fees harian pada pinjaman jatuh tempo |
-| **Laporan Keuangan & PDF** | Generate laporan bulanan dan statement dalam format PDF |
-| **Payment Webhook** | Integrasi webhook untuk pembayaran dari payment gateway eksternal |
-
-### 🗳️ E-Voting RAT (Rapat Anggota Tahunan)
-| Fitur | Deskripsi |
-|-------|-----------|
-| **Agenda Management** | Admin buat agenda rapat dengan opsi voting |
-| **Voting System** | Anggota vote secara digital, satu suara per anggota per agenda |
-| **Hasil Real-Time** | Pantau hasil voting secara live |
-
-### 🛡️ Keamanan & Governance
-| Fitur | Deskripsi |
-|-------|-----------|
-| **Autentikasi bcrypt + NextAuth** | Password hashing & session management aman |
-| **Transaction PIN** | PIN transaksi terpisah untuk otorisasi keuangan |
-| **Role-Based Access** | Admin, Maker, Checker, Member — hak akses bertingkat |
-| **Audit Log** | Catatan lengkap semua aksi admin (approval, rejection, adjustment) |
-| **Rate Limiting** | Proteksi brute-force pada API endpoints |
-| **API Idempotency** | Cegah duplikasi transaksi pada request yang sama |
-| **Session Revocation** | Admin bisa revoke sesi user secara langsung |
-
-### 📱 User Experience
-| Fitur | Deskripsi |
-|-------|-----------|
-| **PWA (Progressive Web App)** | Install sebagai native app di HP |
-| **Offline Sync** | Transaksi disimpan lokal saat offline, otomatis sync saat online |
-| **Dark / Light Mode** | Toggle tema dengan transisi halus |
-| **Responsive Sidebar** | Collapsible sidebar di tablet, full sidebar di desktop, bottom nav di mobile |
-| **Notifikasi Real-Time** | Bell icon dengan badge unread, halaman notifikasi khusus |
-| **Dashboard Interaktif** | Ringkasan saldo, aktivitas terakhir, menu operasional |
-
-### 🌐 Halaman Publik (Landing)
-| Halaman | Path |
-|---------|------|
-| Profil Institusi | `/institusi/profil` |
-| Legalitas & AD/ART | `/institusi/legalitas`, `/institusi/ad-art` |
-| Layanan (Simpanan, Pembiayaan, Digital) | `/layanan/*` |
-| Laporan Keuangan Publik | `/laporan-keuangan` |
-| FAQ Pembiayaan | `/faq/pembiayaan` |
-| Bantuan & Keluhan | `/bantuan/*` |
-| Karir | `/karir` |
-| Privacy Policy | `/privacy` |
+<br />
 
 ---
 
+<br />
+
+## 📋 Daftar Isi
+
+- [Ringkasan Sistem](#-ringkasan-sistem)
+- [Tujuan Bisnis](#-tujuan-bisnis)
+- [Fitur Inti](#-fitur-inti)
+- [Workflow End-to-End](#-workflow-end-to-end)
+- [Keamanan](#-kontrol-keamanan)
+- [Arsitektur Teknis](#-arsitektur-teknis)
+- [Peta Modul](#-peta-modul)
+- [API Reference](#-api-reference)
+- [Quick Start](#-quick-start)
+- [Deployment](#-deployment)
+- [Troubleshooting](#-troubleshooting)
+
+<br />
+
+---
+
+<br />
+
+## 🔭 Ringkasan Sistem
+
+Melayani proses koperasi dari **hulu ke hilir** dalam satu platform:
+
+| # | Kapabilitas | Deskripsi |
+|---|-------------|-----------|
+| 1 | 👤 **Onboarding** | Registrasi anggota, validasi NIK, autentikasi aman |
+| 2 | 💰 **Simpanan** | Pengelolaan simpanan pokok, wajib, dan sukarela |
+| 3 | 🏦 **Pinjaman** | Pengajuan, maker-checker approval, disbursement |
+| 4 | 💳 **Cicilan** | Pembayaran, denda keterlambatan, status kolektabilitas |
+| 5 | 🗳️ **E-Voting RAT** | Rapat anggota tahunan digital, one-member-one-vote |
+| 6 | 📊 **Analytics** | Dashboard pengurus: NPL, cashflow, metrik kas |
+| 7 | 📄 **Laporan** | Arus kas bulanan PDF/XLSX, e-statement anggota |
+| 8 | 🛡️ **Audit** | Trail lengkap untuk semua aksi finansial & admin |
+
+<br />
+
+---
+
+<br />
+
+## 🎯 Tujuan Bisnis
+
+<table>
+<tr>
+<td width="80" align="center">🔍</td>
+<td><strong>Transparansi</strong> — Dana anggota tercatat dan terpantau real-time</td>
+</tr>
+<tr>
+<td align="center">⚖️</td>
+<td><strong>Tata Kelola</strong> — Disiplin pengurus dengan approval berlapis</td>
+</tr>
+<tr>
+<td align="center">📝</td>
+<td><strong>Audit Trail</strong> — Jejak lengkap semua aksi sensitif</td>
+</tr>
+<tr>
+<td align="center">🚫</td>
+<td><strong>Anti-Fraud</strong> — Cegah double spending, replay request, IDOR</td>
+</tr>
+<tr>
+<td align="center">⚡</td>
+<td><strong>UX Optimal</strong> — Responsif, cepat, offline-ready di mobile & desktop</td>
+</tr>
+</table>
+
+<br />
+
+---
+
+<br />
+
+## ✨ Fitur Inti
+
+### 💰 A. Manajemen Simpanan
+
+| Jenis | Deskripsi | Bisa Ditarik? |
+|-------|-----------|:---:|
+| **Simpanan Pokok** | Setoran dasar keanggotaan | ❌ |
+| **Simpanan Wajib** | Setoran berkala wajib | ❌ |
+| **Simpanan Sukarela** | Saldo fleksibel | ✅ |
+
+> 💡 Ketiga simpanan menjadi basis perhitungan **limit pinjaman** dan **SHU** anggota.
+
+---
+
+### 🏦 B. Mesin Pinjaman
+
+```
+┌──────────┐      ┌──────────┐      ┌──────────┐      ┌──────────┐
+│ Pengajuan │ ───▶ │  Maker   │ ───▶ │ Checker  │ ───▶ │ Disburse │
+│  Anggota  │      │ Verif    │      │ Approve  │      │  Dana    │
+└──────────┘      └──────────┘      └──────────┘      └──────────┘
+                                                             │
+                   ┌──────────┐      ┌──────────┐           │
+                   │  LUNAS   │ ◀─── │ Cicilan  │ ◀─────────┘
+                   │ Settled  │      │ Repay    │
+                   └──────────┘      └──────────┘
+```
+
+- Kalkulasi bunga **Flat** dan **Efektif**
+- Penalti keterlambatan otomatis via cron
+- Cek likuiditas kas sebelum pencairan
+- Amortization calculator built-in
+
+---
+
+### 📒 C. Ledger & Riwayat Finansial
+
+- **Double-entry bookkeeping** pada `TransactionHistory`
+- **Idempotency key** — Cegah mutasi ganda saat klik berulang/retry
+- **Audit log** — Semua aksi admin tercatat dengan metadata request
+
+---
+
+### 🗳️ D. E-Voting RAT
+
+| Fitur | Detail |
+|-------|--------|
+| **Agenda** | Admin buat agenda + opsi voting |
+| **Voting** | Satu anggota = satu suara per agenda |
+| **Kontrol** | Publish/close agenda oleh pengurus |
+| **Hasil** | Real-time vote count |
+
+---
+
+### 🔔 E. Notifikasi Operasional
+
+Notifikasi otomatis untuk: *pengajuan, verifikasi, approval, penolakan, pelunasan, dan RAT*
+— Setiap notifikasi **clickable**, langsung menuju halaman terkait.
+
+---
+
+### 📄 F. Laporan & Dokumen
+
+| Output | Format | Keterangan |
+|--------|--------|------------|
+| Laporan Arus Kas Bulanan | PDF / XLSX | Diqueue via BullMQ worker |
+| E-Statement Anggota | PDF | Per-bulan, downloadable |
+| Arsip Laporan | File | Unduh ulang kapanpun |
+
+<br />
+
+---
+
+<br />
+
+## 🔄 Workflow End-to-End
+
+<details>
+<summary><strong>👤 Workflow Anggota</strong></summary>
+
+```
+1. Registrasi akun (NIK, DOB, gender) → validasi NIK ketat
+2. Login credentials
+3. Set PIN transaksi 6 digit
+4. Ajukan setoran / pinjaman
+5. Menunggu persetujuan pengurus (pending → approved / rejected)
+6. Jika pinjaman aktif → bayar cicilan
+7. Pantau notifikasi & unduh e-statement
+```
+</details>
+
+<details>
+<summary><strong>🛡️ Workflow Pengurus</strong></summary>
+
+```
+1. Login sebagai admin
+2. Pantau dashboard: kas, simpanan, pinjaman, NPL
+3. Proses antrian transaksi:
+   ├── Simpanan: approve / reject
+   └── Pinjaman: maker verifikasi → checker approve
+4. Disburse pinjaman yang sudah valid
+5. Kelola agenda RAT & voting
+6. Atur parameter sistem (bunga, denda, limit)
+7. Generate laporan bulanan & review arsip
+```
+</details>
+
+<details>
+<summary><strong>💳 Workflow Pelunasan Pinjaman</strong></summary>
+
+```
+1. Anggota/admin submit pembayaran → endpoint repay
+2. Sistem hitung outstanding + denda (jika overdue)
+3. Update status: ACTIVE → COMPLETED (saat lunas)
+4. Catat jurnal ledger + kirim notifikasi
+```
+</details>
+
+<details>
+<summary><strong>📄 Workflow Laporan Bulanan</strong></summary>
+
+```
+1. Admin pilih bulan/tahun dan format (PDF/XLSX)
+2. API enqueue job laporan ke BullMQ
+3. Worker generate file laporan
+4. File diunggah ke storage internal
+5. Tampil di arsip laporan untuk diunduh
+```
+</details>
+
+<br />
+
+---
+
+<br />
+
+## 🔒 Kontrol Keamanan
+
+| Layer | Implementasi |
+|-------|-------------|
+| **Autentikasi** | NextAuth + session revocation model |
+| **Otorisasi** | Role-based: `member`, `admin`, `maker`, `checker` |
+| **Anti-IDOR** | Validasi kepemilikan data per endpoint |
+| **Rate Limiting** | Proteksi brute-force pada endpoint kritikal |
+| **Soft Delete** | Data finansial tidak pernah hard-delete |
+| **Idempotency** | Key unik per transaksi finansial |
+| **Atomicity** | Prisma transaction untuk mutasi saldo kritis |
+| **PIN Transaksi** | Hashed terpisah via `bcryptjs` |
+| **Audit Log** | Semua aksi admin + metadata request |
+| **RLS** | Row Level Security aktif di Supabase |
+| **Error Sanitization** | Tidak bocor stack trace internal |
+
+<br />
+
+---
+
+<br />
+
+## 🏗️ Arsitektur Teknis
+
+```
+┌─────────────────────────────────────────────────────┐
+│                    CLIENT (PWA)                      │
+│        Next.js App Router · SWR · Tailwind           │
+│           Offline Queue · Optimistic UI              │
+├──────────────────────┬──────────────────────────────┤
+│    API Routes        │      Background Workers       │
+│  /api/* endpoints    │   BullMQ + Redis              │
+│  NextAuth Sessions   │   PDF/XLSX Generation         │
+│  Rate Limiter        │   Late Fee Cron               │
+├──────────────────────┴──────────────────────────────┤
+│               PRISMA ORM (Type-safe)                 │
+├─────────────────────────────────────────────────────┤
+│           PostgreSQL (Supabase + RLS)                │
+│  User · Loan · Transaction · TransactionHistory      │
+│  AuditLog · Agenda · VoteOption · UserVote           │
+│  SystemSettings · Notification · ApiIdempotency      │
+└─────────────────────────────────────────────────────┘
+```
+
+<br />
+
+---
+
+<br />
+
+## 🗂️ Peta Modul
+
+```
+src/
+├── app/
+│   ├── admin/                  # 🛡️ Panel pengurus
+│   ├── profil/                 # 👤 Pengaturan akun anggota
+│   ├── simpanan/               # 💰 Setoran & riwayat simpanan
+│   ├── pinjaman/               # 🏦 Pengajuan & pelunasan
+│   ├── rat/                    # 🗳️ E-Voting RAT
+│   ├── notifikasi/             # 🔔 Pusat notifikasi
+│   ├── laporan-keuangan/       # 📊 Laporan publik
+│   ├── layanan/                # 🌐 Info layanan
+│   ├── institusi/              # 🏛️ Profil, legalitas, AD/ART
+│   ├── bantuan/                # 💬 Hubungi & keluhan
+│   ├── faq/                    # ❓ FAQ
+│   ├── karir/                  # 💼 Karir
+│   └── api/
+│       ├── auth/               #    Auth + register
+│       ├── user/               #    Profil + PIN
+│       ├── transactions/       #    Deposit / withdraw
+│       ├── loans/              #    Detail + repay
+│       ├── admin/              #    Analytics, settings, users, security
+│       ├── reports/            #    Queue + file laporan
+│       ├── statements/         #    E-statement
+│       ├── rat/                #    Agenda + vote
+│       ├── cron/               #    Keepalive + late fees
+│       └── webhooks/           #    Payment gateway
+│
+├── components/                 # UI reusable
+│   ├── BottomNav.tsx           #    Responsive sidebar + bottom nav
+│   ├── DashboardContent.tsx    #    Dashboard utama
+│   ├── LoanAmortizationCalculator.tsx
+│   ├── OfflineSyncBootstrap.tsx
+│   ├── PublicLanding.tsx
+│   ├── PublicInfoPage.tsx
+│   └── TransactionPinInput.tsx
+│
+├── lib/                        # Domain logic & infra
+│   ├── auth.ts                 #    NextAuth config
+│   ├── prisma.ts               #    Client + soft-delete middleware
+│   ├── loanMath.ts             #    Bunga & amortisasi
+│   ├── loanPenalty.ts          #    Denda keterlambatan
+│   ├── loanWorkflow.ts         #    Maker-checker workflow
+│   ├── idempotency.ts          #    Request deduplication
+│   ├── rateLimit.ts            #    Rate limiting
+│   ├── transactionPin.ts       #    PIN hash & verify
+│   ├── shu.ts                  #    Kalkulasi SHU
+│   ├── logger.ts               #    Pino structured logging
+│   ├── offlineTransactionQueue.ts
+│   ├── systemSettings.ts
+│   └── validateNIK.ts
+│
+├── proxy.ts                    # Route proxy
+└── scripts/
+    ├── apply-late-fees.mjs     # Cron: denda harian
+    └── report-worker.mjs       # Worker: generate PDF/XLSX
+```
+
+<br />
+
+---
+
+<br />
+
+## 📡 API Reference
+
+<details>
+<summary><strong>🔐 Auth & User</strong></summary>
+
+| Method | Endpoint | Deskripsi |
+|--------|----------|-----------|
+| `POST` | `/api/auth/register` | Registrasi anggota baru |
+| `POST` | `/api/auth/callback/credentials` | Login |
+| `GET` | `/api/user` | Data profile user |
+| `PUT` | `/api/user` | Update profile |
+| `PUT` | `/api/user/transaction-pin` | Set/ubah PIN transaksi |
+
+</details>
+
+<details>
+<summary><strong>💰 Transactions & Loans</strong></summary>
+
+| Method | Endpoint | Deskripsi |
+|--------|----------|-----------|
+| `GET` | `/api/transactions` | Riwayat transaksi user |
+| `POST` | `/api/transactions` | Buat transaksi baru |
+| `POST` | `/api/transactions/deposit` | Setoran simpanan |
+| `POST` | `/api/transactions/withdraw` | Penarikan dana |
+| `GET` | `/api/loans` | Daftar pinjaman user |
+| `GET` | `/api/loans/[loanId]` | Detail pinjaman |
+| `POST` | `/api/loans/[loanId]/repay` | Bayar cicilan |
+
+</details>
+
+<details>
+<summary><strong>🛡️ Admin</strong></summary>
+
+| Method | Endpoint | Deskripsi |
+|--------|----------|-----------|
+| `GET` | `/api/admin/transactions` | Semua transaksi + metrik |
+| `PATCH` | `/api/admin/transactions` | Approve/reject transaksi |
+| `GET/PUT` | `/api/admin/settings` | Konfigurasi sistem |
+| `GET` | `/api/admin/analytics` | Dashboard analitik |
+| `GET/PUT/DELETE` | `/api/admin/users` | Kelola anggota |
+| `POST` | `/api/admin/users/create` | Tambah anggota baru |
+| `POST` | `/api/admin/loans/[id]/disburse` | Cairkan pinjaman |
+
+</details>
+
+<details>
+<summary><strong>🗳️ RAT</strong></summary>
+
+| Method | Endpoint | Deskripsi |
+|--------|----------|-----------|
+| `GET/POST` | `/api/rat/agendas` | Daftar / buat agenda |
+| `PATCH` | `/api/rat/agendas/[agendaId]` | Update / close agenda |
+| `POST` | `/api/rat/agendas/[agendaId]/vote` | Submit suara |
+
+</details>
+
+<details>
+<summary><strong>📄 Reports</strong></summary>
+
+| Method | Endpoint | Deskripsi |
+|--------|----------|-----------|
+| `POST` | `/api/reports/monthly` | Generate laporan bulanan |
+| `GET` | `/api/reports/files` | Arsip file laporan |
+| `GET` | `/api/reports/files/[fileName]` | Download file |
+| `GET` | `/api/statements/monthly` | E-statement anggota |
+
+</details>
+
+<br />
+
+---
+
+<br />
+
 ## 🚀 Quick Start
 
-### Prerequisites
+### Prasyarat
 
-- **Node.js** 18+
-- **npm** atau **yarn**
+| Tool | Versi | Keterangan |
+|------|-------|------------|
+| Node.js | 18+ | Runtime |
+| npm | — | Package manager |
+| PostgreSQL | 15+ | Database (atau Supabase) |
+| Redis | 7+ | Queue worker laporan |
 
-### 1. Clone & Install
+### 1️⃣ Clone & Install
 
 ```bash
 git clone https://github.com/bicknicktick/KOPERASI-MERAH-PUTIH-BITZYID.git
@@ -89,160 +452,157 @@ cd KOPERASI-MERAH-PUTIH-BITZYID
 npm install
 ```
 
-### 2. Setup Environment
+### 2️⃣ Environment Variables
 
-Buat file `.env` di root project:
+Buat file `.env`:
 
 ```env
-DATABASE_URL="file:./dev.db"
-NEXTAUTH_SECRET="your_super_secret_key_here"
+DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DBNAME"
+NEXTAUTH_SECRET="replace-with-strong-secret"
 NEXTAUTH_URL="http://localhost:2211"
+INTERNAL_APP_URL="http://127.0.0.1:2211"
+REDIS_URL="redis://127.0.0.1:6379"
+CRON_SECRET="replace-with-strong-secret"
+PAYMENT_WEBHOOK_SECRET="replace-with-strong-secret"
+REPORT_UPLOAD_SECRET="replace-with-strong-secret"
 ```
 
-> ⚠️ **Ganti `NEXTAUTH_SECRET`** dengan secret key unik. Gunakan: `openssl rand -base64 32`
+> ⚠️ Generate secrets: `openssl rand -base64 32`
 
-### 3. Setup Database & Jalankan
+### 3️⃣ Database & Run
 
 ```bash
-npx prisma db push
 npx prisma generate
+npx prisma db push
 npm run dev
 ```
 
-Buka **http://localhost:2211** di browser.
+Buka → **http://localhost:2211**
 
-### 4. (Opsional) Set Admin & Cron Jobs
+<br />
+
+---
+
+<br />
+
+## ⚙️ Perintah Operasional
 
 ```bash
-# Set user sebagai admin (edit NIK di file terlebih dahulu)
-node setAdmin.js
+npm run dev                    # Development server (port 2211)
+npm run build                  # Production build (+ prisma generate)
+npm run start                  # Start production
 
-# Jalankan cron denda keterlambatan
-npm run cron:late-fees
+npm run worker:reports         # Worker laporan bulanan (PDF/XLSX)
+npm run cron:late-fees         # Hitung denda keterlambatan
 
-# Jalankan worker laporan PDF
-npm run worker:reports
+npm run audit:smoke            # Smoke test endpoint & halaman
+npm run security:enforce-rls   # Terapkan RLS hardening Supabase
 ```
+
+<br />
 
 ---
 
-## 🏗️ Tech Stack
+<br />
 
-```
-📦 koperasi-merah-putih
-├── ⚡ Next.js 16          — App Router + Turbopack
-├── 🎨 Tailwind CSS 3      — Utility-first CSS
-├── 🗃️ Prisma 6 + SQLite   — Type-safe ORM + embedded DB
-├── 🔑 NextAuth.js 4       — Auth + session management
-├── 📡 SWR                 — Real-time data fetching
-├── 📱 next-pwa            — Progressive Web App
-├── 📄 PDFKit + pdf-lib    — PDF report generation
-├── 📊 Pino                — Structured logging
-├── 🌗 next-themes         — Dark/Light mode
-└── 🔥 TypeScript 5        — End-to-end type safety
-```
+## ☁️ Deployment
 
----
+### Vercel + Supabase (Recommended)
 
-## 📂 Struktur Proyek
+| Step | Aksi |
+|------|------|
+| 1 | Set semua environment variables di Vercel |
+| 2 | Gunakan Supabase pooler-compatible `DATABASE_URL` |
+| 3 | Deploy via Vercel |
+| 4 | Verifikasi login, admin endpoints, dan cron |
+| 5 | PWA: reinstall jika orientation berubah |
 
-```
-src/
-├── app/
-│   ├── api/
-│   │   ├── admin/             # Admin: users, transactions, loans, analytics, settings, security
-│   │   ├── auth/              # Login, register, NextAuth
-│   │   ├── cron/              # Scheduled jobs (late fees)
-│   │   ├── loans/             # Loan CRUD, repayment, disbursement
-│   │   ├── membership/        # Resign membership
-│   │   ├── notifications/     # Notification CRUD
-│   │   ├── rat/               # E-Voting RAT (agendas, votes)
-│   │   ├── reports/           # Monthly reports, file upload
-│   │   ├── statements/        # Monthly statements PDF
-│   │   ├── transactions/      # Deposit, withdraw, general
-│   │   ├── user/              # User data, transaction PIN
-│   │   └── webhooks/          # Payment webhook receiver
-│   ├── admin/                 # Admin panel UI
-│   ├── bantuan/               # Help & complaints pages
-│   ├── faq/                   # FAQ pages
-│   ├── institusi/             # Institution info (profile, legal, AD/ART)
-│   ├── karir/                 # Career page
-│   ├── laporan-keuangan/      # Public financial reports
-│   ├── layanan/               # Services pages (savings, loans, digital)
-│   ├── login/ & register/     # Auth pages
-│   ├── notifikasi/            # Notifications page
-│   ├── pinjaman/              # Loan application page
-│   ├── profil/                # User profile page
-│   ├── rat/                   # E-Voting RAT page
-│   └── simpanan/              # Savings page
-├── components/
-│   ├── BottomNav.tsx          # Responsive nav (sidebar + bottom bar)
-│   ├── DashboardContent.tsx   # Main dashboard
-│   ├── LoanAmortizationCalculator.tsx  # Loan calculator
-│   ├── OfflineSyncBootstrap.tsx        # Offline queue sync
-│   ├── PublicLanding.tsx      # Public landing page
-│   ├── PublicInfoPage.tsx     # Public info template
-│   └── TransactionPinInput.tsx # PIN input component
-├── lib/
-│   ├── auth.ts                # NextAuth config
-│   ├── prisma.ts              # Prisma client + soft-delete middleware
-│   ├── apiHandler.ts          # API error handling wrapper
-│   ├── idempotency.ts         # Request deduplication
-│   ├── loanMath.ts            # Interest & amortization calculations
-│   ├── loanPenalty.ts         # Late fee logic
-│   ├── loanWorkflow.ts        # Maker-checker workflow
-│   ├── logger.ts              # Pino structured logging
-│   ├── offlineTransactionQueue.ts  # Offline sync queue
-│   ├── rateLimit.ts           # API rate limiting
-│   ├── shu.ts                 # SHU (Sisa Hasil Usaha) calculation
-│   ├── systemSettings.ts      # Dynamic system config
-│   ├── transactionPin.ts      # PIN hashing & verification
-│   └── validateNIK.ts         # NIK format validation
-├── proxy.ts                   # Route proxy (replaces middleware)
-└── scripts/
-    ├── apply-late-fees.mjs    # Cron: apply daily late fees
-    └── report-worker.mjs      # Worker: generate PDF reports
-```
+### Cron Aktif
+
+| Endpoint | Fungsi |
+|----------|--------|
+| `/api/cron/keepalive-db` | Keepalive database |
+| `/api/cron/apply-late-fees` | Denda loan overdue |
+
+<br />
 
 ---
 
-## 🔒 Keamanan
+<br />
 
-- ✅ Password di-hash menggunakan **bcrypt**
-- ✅ Transaction PIN terpisah dengan hashing
-- ✅ Session management via **NextAuth.js** + session revocation
-- ✅ Route protection via **proxy** (Next.js 16 style)
-- ✅ Role-based access control (**Admin / Maker / Checker / Member**)
-- ✅ **Audit log** untuk setiap aksi administratif
-- ✅ **Rate limiting** pada API endpoints
-- ✅ **API idempotency** untuk mencegah duplikasi transaksi
-- ✅ Environment variables untuk konfigurasi sensitif
-- ✅ CSRF protection bawaan NextAuth
-- ✅ Soft-delete pattern (data tidak benar-benar dihapus)
+## 🔧 Troubleshooting
+
+<details>
+<summary><strong>❌ Login 401</strong></summary>
+
+- Cek `NEXTAUTH_SECRET`, `NEXTAUTH_URL`, `DATABASE_URL`
+- Pastikan user aktif (`isActive=true`, `deletedAt=null`)
+- Verifikasi hash password user
+</details>
+
+<details>
+<summary><strong>❌ Endpoint 429</strong></summary>
+
+- Rate limit endpoint kritikal aktif
+- Tunggu window reset atau sesuaikan konfigurasi limiter
+</details>
+
+<details>
+<summary><strong>❌ Report Monthly timeout/503</strong></summary>
+
+- Cek `REDIS_URL` dan status worker
+- Endpoint sekarang fail-fast agar tidak hang
+</details>
+
+<details>
+<summary><strong>❌ Tablet layout terpotong</strong></summary>
+
+- Pastikan manifest terbaru ter-load
+- PWA lama: uninstall lalu install ulang
+</details>
+
+<br />
 
 ---
 
-## 🤝 Kontribusi
+<br />
 
-Kontribusi sangat disambut! Silakan:
+## 🎨 Branding
 
-1. Fork repository ini
-2. Buat branch fitur baru (`git checkout -b fitur-baru`)
-3. Commit perubahan (`git commit -m 'Tambah fitur baru'`)
-4. Push ke branch (`git push origin fitur-baru`)
-5. Buat Pull Request
+| Aset | Path |
+|------|------|
+| Brand Mark | `public/brand-mark.svg` |
+| Favicon | `public/favicon.ico` |
+| Icon 192px | `public/icon-192.png` |
+| Icon 512px | `public/icon-512.png` |
 
-## 📜 Lisensi
+<br />
 
-Proyek ini dilisensikan di bawah [MIT License](LICENSE).
+---
+
+<br />
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+<br />
 
 ---
 
 <div align="center">
 
-**Dibuat dengan ❤️ oleh [Bitzy.ID](https://cv.bitzy.id)**
+  <br />
 
-[![Support](https://img.shields.io/badge/Support-PayPal-blue?style=flat-square&logo=paypal)](https://paypal.me/bitzyid)
-[![Portfolio](https://img.shields.io/badge/Portfolio-cv.bitzy.id-red?style=flat-square&logo=googlechrome&logoColor=white)](https://cv.bitzy.id)
+  **Built & maintained by [Bitzy.ID](https://cv.bitzy.id)**
+
+  <br />
+
+  [![Support via PayPal](https://img.shields.io/badge/Support-PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/bitzyid)
+  [![Portfolio](https://img.shields.io/badge/Portfolio-cv.bitzy.id-DC2626?style=for-the-badge&logo=googlechrome&logoColor=white)](https://cv.bitzy.id)
+
+  <br />
+
+  <sub>🇮🇩 Open source untuk kemajuan koperasi Indonesia</sub>
 
 </div>
